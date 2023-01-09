@@ -1,0 +1,23 @@
+{
+  "name": "reker7/robokassa",
+  "description": "Package for working with the payment system RoboKassa",
+  "keywords": [
+    "robokassa",
+    "recurrent",
+    "payment"
+  ],
+  "license": "MIT",
+
+  "require": {
+    "php": "^8.0.2",
+    "guzzlehttp/guzzle": "^7.2",
+    "ext-json": "*",
+    "ext-simplexml": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Reker7\\Robokassa\\": "src/"
+    }
+  }
+}
+
