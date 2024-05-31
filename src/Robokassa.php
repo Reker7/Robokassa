@@ -145,19 +145,21 @@ class Robokassa
         $signatureParams = [
             'OutSum' => $params['OutSum'],
             'InvId' => $params['InvId'],
+            'Receipt' => $params['Receipt'],
         ];
 
-        if (!empty($params['UserIp'])) {
-            $signatureParams['UserIp'] = $params['UserIp'];
-        }
+//        if (!empty($params['Receipt'])) {
+//            $params['Receipt'] = json_encode($params['Receipt']);
+//            $params['Receipt'] = urlencode($params['Receipt']);
+//            $signatureParams['Receipt'] = $params['Receipt'];
+//        }
 
         if (!empty($params['OutSumCurrency'])) {
             $signatureParams['OutSumCurrency'] = $params['OutSumCurrency'];
         }
 
-        if (!empty($params['Receipt'])) {
-            $params['Receipt'] = json_encode($params['Receipt']);
-            $signatureParams['Receipt'] = json_encode($params['Receipt']);
+        if (!empty($params['UserIp'])) {
+            $signatureParams['UserIp'] = $params['UserIp'];
         }
 
         if (!empty($params['IsTest']) && $params['IsTest'] === true) {
@@ -566,6 +568,7 @@ class Robokassa
             $this->getLogin(),
             $params['OutSum'],
             $params['InvId'],
+            $params['Receipt'],
             $this->getPassword1(),
         ];
 
